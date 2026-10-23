@@ -140,7 +140,7 @@ Ordem fixa, uma página, âncoras `#produtos`, `#loja`, `#contato`.
 
 ### 9.1 Conteúdo textual
 
-Tom direto, sem superlativo de propaganda. Exemplos aprovados: "Tinta boa, direto do atacado.";
+Tom direto, sem superlativo de propaganda. Exemplos aprovados: "A cor que a sua obra pede.";
 "Dúvida de quantidade ou de produto? A gente responde pelo WhatsApp."
 
 **Regra do dono:** nenhuma menção a preço, valor, desconto ou condição comercial no texto do site.
