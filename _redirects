@@ -1,0 +1,5 @@
+# Cloudflare Pages: pastas internas não devem ser servidas como páginas.
+/mockups/*  /  302
+/docs/*     /  302
+/tests/*    /  302
+/scripts/*  /  302

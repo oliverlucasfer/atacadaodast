@@ -1,0 +1,69 @@
+/* ==========================================================================
+   tokens.css — único lugar com valores de cor, tipografia e espaço.
+   Nenhum componente deve usar hex; tudo passa por var(--token).
+   Contraste verificado por tests/tokens.test.mjs.
+   ========================================================================== */
+
+/* ---- fontes auto-hospedadas (subset latino) ---- */
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../fonts/plex-sans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/plex-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Cor — derivada da logo (spec §8.1) */
+  --color-bg: #F7F6F3;          /* papel */
+  --color-fg: #1F2033;          /* texto corrido */
+  --color-heading: #333468;     /* navy da marca, títulos */
+  --color-muted: #5A5B72;       /* texto secundário */
+  --color-accent: #ED3237;      /* vermelho da marca: só texto >= 24px e elementos não textuais */
+  --color-accent-text: #C42B2F; /* vermelho para texto pequeno (AA) */
+  --color-dark: #282954;        /* bloco de CTA */
+  --color-line: rgba(51, 52, 104, 0.16);
+  --color-surface: #FFFFFF;     /* superfícies elevadas (botão sobre mapa) */
+  --color-map: #EFEDE6;         /* fundo do cartão de mapa */
+  --color-on-dark: #FFFFFF;     /* texto sobre o bloco escuro */
+  --color-on-dark-muted: rgba(255, 255, 255, 0.65);
+
+  /* Leque de cores do símbolo */
+  --spectrum-1: #ED3237;
+  --spectrum-2: #E9A13B;
+  --spectrum-3: #E8C43B;
+  --spectrum-4: #4C9A52;
+  --spectrum-5: #2387C7;
+  --spectrum-6: #703C94;
+
+  /* Tipografia (spec §8.2) */
+  --font-display: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", "Consolas", monospace;
+
+  /* Escala de espaço */
+  --step-1: 4px;
+  --step-2: 8px;
+  --step-3: 16px;
+  --step-4: 24px;
+  --step-5: 40px;
+  --step-6: 64px;
+  --step-7: 96px;
+
+  --max-w: 1220px;
+  --gutter: 32px;
+}
