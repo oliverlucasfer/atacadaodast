@@ -34,7 +34,7 @@ o portão de publicação.
 | Endereço, CEP | `index.html` → seção "A loja" + JSON-LD no `<head>` |
 | Tabela de horário | `index.html` → `<table class="horarios">` **e** `assets/js/hours.js` (constantes `ABRE`, `MEIO`, `TARDE`, `FECHA`) |
 | Textos das linhas de produto | `index.html` → `<article class="linha-produto">` |
-| Link do WhatsApp | `index.html` → os dois elementos com `data-pending="whatsapp"` |
+| Link do WhatsApp | `index.html` → os **três** elementos com `data-pending="whatsapp"` (cabeçalho, hero e CTA final) |
 | Cores e fontes | `assets/css/tokens.css` (único lugar com valores de cor) |
 | Layout | `assets/css/styles.css` |
 
@@ -51,8 +51,8 @@ o portão de publicação.
 
 Cada push em `main` publica. HTTPS e CDN são automáticos.
 
-Se o nome do projeto no Cloudflare não for `atacadaodast`, troque os cinco valores de URL absoluta no
-`<head>` (`canonical`, `og:url`, `og:image`, `twitter:image` e `url`/`image` do JSON-LD).
+Se o nome do projeto no Cloudflare não for `atacadaodast`, troque os seis valores de URL absoluta no
+`<head>` (`canonical`, `og:url`, `og:image`, `twitter:image` e os campos `url`/`image` do JSON-LD).
 
 ## Checklist antes de publicar
 

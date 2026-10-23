@@ -35,7 +35,7 @@ test("JSON-LD LocalBusiness valido e sem telefone inventado", () => {
   assert.equal(ld["@type"], "HardwareStore");
   assert.equal(ld.name, "Atacadão das Tintas");
   assert.equal(ld.address["@type"], "PostalAddress");
-  assert.equal(ld.address.streetAddress, "Av. Presidente Dutra, 2237");
+  assert.equal(ld.address.streetAddress, "Av. Presidente Dutra, 2237 — Centro");
   assert.equal(ld.address.addressLocality, "Vitória da Conquista");
   assert.equal(ld.address.addressRegion, "BA");
   assert.equal(ld.address.postalCode, "45000-010");

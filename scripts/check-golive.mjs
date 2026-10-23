@@ -26,6 +26,16 @@ for (const link of linksWa) {
   }
 }
 
+// todo CTA que promete WhatsApp precisa abrir o WhatsApp — nao um scroll interno
+for (const m of html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/g)) {
+  const texto = m[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  if (!/whatsapp|or[çc]amento/i.test(texto)) continue;
+  const href = m[0].match(/href="([^"]*)"/)?.[1] ?? "";
+  if (!/^https:\/\/wa\.me\/55\d{10,11}$/.test(href)) {
+    problemas.push(`o CTA "${texto}" promete WhatsApp mas aponta para "${href || "lugar nenhum"}"`);
+  }
+}
+
 const ld = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
 if (!ld) {
   problemas.push("sem JSON-LD");

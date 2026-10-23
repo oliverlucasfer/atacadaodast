@@ -1,4 +1,4 @@
-# make-assets.ps1 -- gera simbolo recortado, favicons e imagem Open Graph.
+﻿# make-assets.ps1 -- gera simbolo recortado, favicons e imagem Open Graph.
 # Requer apenas System.Drawing (presente no Windows). Nao instala nada.
 # Executar: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/make-assets.ps1
 param(
@@ -116,9 +116,22 @@ $fonteTitulo = New-Object System.Drawing.Font("Segoe UI", 30, [System.Drawing.Fo
 $fonteTexto = New-Object System.Drawing.Font("Consolas", 17, [System.Drawing.FontStyle]::Regular)
 $navy = New-Object System.Drawing.SolidBrush((C "#333468"))
 $cinza = New-Object System.Drawing.SolidBrush((C "#5A5B72"))
-$g.DrawString("Vitoria da Conquista / BA", $fonteTitulo, $navy, 570, 240)
-$g.DrawString("Tintas - texturas - bases - materiais para pintura", $fonteTexto, $cinza, 572, 312)
-$g.DrawString("@atacadaodast", $fonteTexto, $navy, 572, 348)
+
+$xTexto = 570
+$larguraMax = 1200 - $xTexto - 70
+
+function Draw-Linha([string]$texto, $fonte, $pincel, [int]$y) {
+  $medida = $g.MeasureString($texto, $fonte)
+  if ($medida.Width -gt $larguraMax) {
+    throw "texto estoura a area segura ($([int]$medida.Width)px de $larguraMax): $texto"
+  }
+  $g.DrawString($texto, $fonte, $pincel, $xTexto, $y)
+}
+
+Draw-Linha "Vitória da Conquista / BA" $fonteTitulo $navy 232
+Draw-Linha "Tintas · texturas · bases · ferramentas" $fonteTexto $cinza 300
+Draw-Linha "Materiais para pintura" $fonteTexto $cinza 330
+Draw-Linha "@atacadaodast" $fonteTexto $navy 372
 
 $bloco = 1200 / 6
 for ($i = 0; $i -lt 6; $i++) {
@@ -149,3 +162,4 @@ Save-Redimensionado "assets/logo/simbolo.png" 96 "$OutDir/simbolo-96.png"
 Save-Redimensionado $SrcLogo 180 "$OutDir/logo-rodape.png"
 
 "ok: simbolo ${w}x${h} -> ${lado}x${lado} (gap x=$gap), favicons, og-1200x630 e versoes leves"
+

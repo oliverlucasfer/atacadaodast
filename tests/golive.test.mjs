@@ -18,6 +18,7 @@ test("passa quando o WhatsApp e o telephone entram", () => {
   const html = readFileSync("index.html", "utf8")
     .replaceAll(' data-pending="whatsapp"', "")
     .replaceAll('href="#"', 'href="https://wa.me/5577999999999"')
+    .replaceAll('href="#contato"', 'href="https://wa.me/5577999999999"')
     .replace(
       '"sameAs"',
       '"telephone": "+55 77 99999-9999",\n  "sameAs"',

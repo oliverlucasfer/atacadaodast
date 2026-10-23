@@ -1,2 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /mockups/
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /scripts/
