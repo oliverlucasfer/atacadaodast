@@ -4,6 +4,29 @@
    Contraste verificado por tests/tokens.test.mjs.
    ========================================================================== */
 
+/* ---- fontes auto-hospedadas (subset latino) ---- */
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../fonts/plex-sans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/plex-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Cor — derivada da logo (spec §8.1) */
   --color-bg: #F7F6F3;          /* papel */

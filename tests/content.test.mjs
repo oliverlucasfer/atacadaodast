@@ -47,12 +47,17 @@ test("nenhum telefone inventado na pagina", () => {
 
 test("toda imagem tem alt, width e height", () => {
   const imgs = html.match(/<img\b[^>]*>/g) ?? [];
-  assert.ok(imgs.length >= 2, "esperava logo no cabecalho e no rodape");
+  assert.ok(imgs.length >= 2, "esperava logo no rodape e o mapa");
   for (const img of imgs) {
-    assert.match(img, /alt="[^"]+"/, `sem alt: ${img}`);
+    assert.match(img, /\balt="[^"]*"/, `sem alt: ${img}`);
     assert.match(img, /\bwidth="\d+"/, `sem width: ${img}`);
     assert.match(img, /\bheight="\d+"/, `sem height: ${img}`);
   }
+});
+
+test("a marca no rodape tem alt descritivo (nao decorativo)", () => {
+  const rodape = html.match(/<img[^>]+logo-rodape\.png[^>]*>/)?.[0] ?? "";
+  assert.match(rodape, /alt="Atacadão das Tintas"/);
 });
 
 test("estrutura: skip link, main e ancoras", () => {
