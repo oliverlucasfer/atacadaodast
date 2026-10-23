@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Direções visuais — Atacadão das Tintas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#333468; --navy-2:#282954; --red:#ED3237; --paper:#F7F6F3;
+  --ink:#1A1A1F; --muted:#5A5B72; --line:rgba(51,52,104,.16);
+  --orange:#E9A13B; --yellow:#E8C43B; --green:#4C9A52; --blue:#2387C7; --purple:#703C94;
+  --max:1220px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-family:Archivo,system-ui,sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.02}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+}
+.spectrum{height:3px;width:100%;background:linear-gradient(90deg,
+  var(--red) 0 16.6%, var(--orange) 16.6% 33.3%, var(--yellow) 33.3% 50%,
+  var(--green) 50% 66.6%, var(--blue) 66.6% 83.3%, var(--purple) 83.3% 100%);}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 22px;border:0;border-radius:0;
+  font-family:Archivo,sans-serif;font-weight:700;font-size:15px;letter-spacing:.01em;
+  text-decoration:none;cursor:pointer;transition:transform .12s ease,background .12s ease;
+}
+.btn svg{width:17px;height:17px;flex:none}
+.btn:hover{transform:translateY(-1px)}
+.btn-solid{background:var(--navy);color:#fff}
+.btn-solid:hover{background:var(--navy-2)}
+.btn-ghost{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy)}
+.ph{
+  background:
+    repeating-linear-gradient(135deg,rgba(51,52,104,.06) 0 2px,transparent 2px 12px),
+    #E9E6DE;
+  display:flex;align-items:flex-end;padding:14px;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(51,52,104,.55);
+}
+
+/* ---------- barra de controle (só do mockup) ---------- */
+.switch{
+  position:fixed;top:0;left:0;right:0;z-index:99;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:9px 16px;background:#15161c;color:#fff;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+}
+.switch b{color:#ffd166}
+.switch .sp{flex:1}
+.switch button{
+  font:inherit;letter-spacing:.08em;cursor:pointer;
+  background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);
+  padding:6px 14px;border-radius:999px;
+}
+.switch button[aria-pressed="true"]{background:#fff;color:#15161c;border-color:#fff}
+.pad{height:46px}
+
+/* =========================================================
+   DIREÇÃO A — BALCÃO (papel, editorial, tipográfico)
+   ========================================================= */
+.a .bar{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:46px;z-index:20}
+.a .bar-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.a .logo{height:26px;width:auto}
+.a .bar-right{display:flex;align-items:center;gap:26px;font-size:13px;color:var(--muted)}
+.a .bar-right .tel{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.02em;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:2px}
+.a .bar-right span{display:none}
+
+.a .hero{padding:78px 0 0}
+.a .hero-grid{display:grid;grid-template-columns:1.55fr .85fr;gap:56px;align-items:start}
+.a h1{font-size:clamp(44px,6.4vw,84px);color:var(--navy);margin:18px 0 26px;max-width:12ch}
+.a h1 em{font-style:normal;color:var(--red)}
+.a .lede{font-size:18px;line-height:1.6;color:var(--muted);max-width:44ch;margin-bottom:30px}
+.a .ctas{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.a .note{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.06em;margin-top:22px}
+
+.a .chips{display:grid;gap:2px;margin-top:6px}
+.a .chip{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;color:#fff}
+.a .chip span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.a .chip strong{font-family:Archivo,sans-serif;font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;opacity:.95}
+
+.a section{padding:92px 0}
+.a .sec-head{display:flex;align-items:baseline;gap:18px;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.a .sec-head .num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--red);letter-spacing:.1em}
+.a .sec-head h2{font-size:clamp(26px,3vw,38px);color:var(--navy)}
+.a .row{display:grid;grid-template-columns:52px 1fr auto;gap:24px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.a .row .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
+.a .row h3{font-size:clamp(19px,2vw,25px);color:var(--navy);font-weight:700;letter-spacing:-.015em}
+.a .row p{font-size:14.5px;color:var(--muted);margin-top:5px;max-width:60ch}
+.a .row .tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+.a .loja{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.a .loja .ph{aspect-ratio:4/3}
+.a .block{margin-bottom:34px}
+.a .block h4{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.a address{font-style:normal;font-size:17px;line-height:1.5;color:var(--navy)}
+.a .hours{width:100%;border-collapse:collapse;font-size:14.5px}
+.a .hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.a .hours td:last-child{text-align:right;font-family:"IBM Plex Mono",monospace;font-size:13.5px}
+.a .hours tr.now td{color:var(--red);font-weight:600}
+.a .hours tr.now td:last-child::after{content:" · aberto";font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+
+.a .cta{background:var(--navy);color:#fff;padding:80px 0}
+.a .cta .inner{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.a .cta h2{font-size:clamp(30px,4.2vw,54px);max-width:16ch;letter-spacing:-.03em}
+.a .cta p{color:rgba(255,255,255,.62);font-size:16px;margin-top:16px;max-width:38ch}
+.a .btn-paper{background:var(--paper);color:var(--navy)}
+.a .btn-paper:hover{background:#fff}
+.a .foot{padding:36px 0 46px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.a .foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.a .foot img{height:18px;width:auto;opacity:.75}
+.a .foot .mono{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em}
+
+/* =========================================================
+   DIREÇÃO B — AMOSTRA (espectro, escuro, gráfico)
+   ========================================================= */
+.b .bar{background:var(--navy);color:#fff;position:sticky;top:46px;z-index:20}
+.b .bar-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+.b .tile{background:var(--paper);padding:9px 14px;display:flex;align-items:center}
+.b .tile img{height:20px;width:auto}
+.b .bar-right{display:flex;align-items:center;gap:22px}
+.b .bar-right a{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#fff;opacity:.85}
+.b .bar-right .btn{padding:11px 18px;font-size:13px}
+
+.b .hero{background:var(--navy);color:#fff;padding:72px 0 0;overflow:hidden}
+.b .hero h1{font-size:clamp(46px,8.4vw,116px);letter-spacing:-.04em;text-transform:uppercase;line-height:.86}
+.b .hero h1 span{color:var(--red)}
+.b .hero .sub{margin-top:26px;font-size:17px;color:rgba(255,255,255,.72);max-width:46ch}
+.b .hero .act{margin:32px 0 58px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.b .btn-red{background:var(--red);color:#fff}
+.b .deck{display:grid;grid-template-columns:repeat(6,1fr);height:150px}
+.b .deck div{position:relative;display:flex;align-items:flex-end;padding:12px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(0,0,0,.55)}
+.b .deck div:nth-child(n+4){color:rgba(255,255,255,.8)}
+.b .deck div:nth-child(1){background:var(--red)}
+.b .deck div:nth-child(2){background:var(--orange)}
+.b .deck div:nth-child(3){background:var(--yellow)}
+.b .deck div:nth-child(4){background:var(--green)}
+.b .deck div:nth-child(5){background:var(--blue)}
+.b .deck div:nth-child(6){background:var(--purple)}
+
+.b section{padding:88px 0}
+.b .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:34px}
+.b .sec-head h2{font-size:clamp(28px,3.4vw,44px);color:var(--navy);text-transform:uppercase;letter-spacing:-.03em}
+.b .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
+.b .cell{background:var(--paper);padding:26px 24px 30px;min-height:196px;display:flex;flex-direction:column;justify-content:space-between}
+.b .cell .dot{width:26px;height:26px}
+.b .cell h3{font-size:20px;color:var(--navy);font-weight:700;margin-bottom:8px;letter-spacing:-.02em}
+.b .cell p{font-size:14px;color:var(--muted)}
+.b .cell .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+.b .dark-band{background:var(--navy-2);color:#fff}
+.b .dark-band .sec-head h2{color:#fff}
+.b .info{display:grid;grid-template-columns:1.1fr .9fr;gap:2px;background:rgba(255,255,255,.16)}
+.b .info > div{background:var(--navy-2);padding:32px}
+.b .info h4{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+.b .info address{font-style:normal;font-size:19px;line-height:1.45}
+.b .info .big{font-family:Archivo,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;margin-top:18px}
+.b .hh{display:grid;grid-template-columns:auto auto;gap:6px 24px;font-size:15px}
+.b .hh .d{color:rgba(255,255,255,.6)}
+.b .hh .h{font-family:"IBM Plex Mono",monospace;font-size:14px;text-align:right}
+.b .hh .now{color:var(--red)}
+.b .map{background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px),rgba(255,255,255,.04);min-height:150px;margin-top:20px;display:flex;align-items:flex-end;padding:14px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+.b .foot{background:var(--navy);color:rgba(255,255,255,.6);padding:34px 0 44px;font-size:12px}
+.b .foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.b .foot .tile{padding:6px 9px}
+.b .foot .tile img{height:14px}
+.b .foot .mono{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em}
+
+@media (max-width:900px){
+  .wrap{padding:0 20px}
+  .a .hero-grid,.a .loja{grid-template-columns:1fr;gap:40px}
+  .a .bar-right .tel{display:none}
+  .a .bar-right span{display:inline}
+  .b .grid3{grid-template-columns:1fr}
+  .b .info{grid-template-columns:1fr}
+  .a section,.b section{padding:64px 0}
+  .a .row{grid-template-columns:34px 1fr;gap:16px}
+  .a .row .tag{display:none}
+  .b .bar-right a{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="switch">
+  <span>Direção</span>
+  <button id="btn-a" aria-pressed="true" onclick="show('a')">A · Balcão</button>
+  <button id="btn-b" aria-pressed="false" onclick="show('b')">B · Amostra</button>
+  <span class="sp"></span>
+  <span><b>mockup</b> · textos, telefone e horário são exemplos</span>
+</div>
+<div class="pad"></div>
+
+<!-- ==================== DIREÇÃO A ==================== -->
+<div class="a" id="dir-a">
+
+  <header class="bar">
+    <div class="wrap bar-in">
+      <img class="logo" src="../assets/logo/LOGO_AF_HORIZONTAL.png" alt="Atacadão das Tintas">
+      <nav class="bar-right">
+        <a class="tel" href="tel:+5531900000000">(31) 90000-0000</a>
+        <span>Belo Horizonte · MG</span>
+        <a class="btn btn-solid" href="#contato">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.19-1.16-1.55-1.16-2.96 0-1.4.73-2.09 1-2.38.26-.29.57-.36.77-.36.19 0 .39.01.56.01.18 0 .43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.01 2.1 1.32 2.39 1.47.29.15.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.75-.17 1.43z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Atacado de tintas · Belo Horizonte / MG</p>
+        <h1>Tinta boa, preço de <em>atacado</em>.</h1>
+        <div class="spectrum" style="max-width:220px;margin-bottom:26px"></div>
+        <p class="lede">Tintas, texturas, esmaltes, ferramentas e tudo que vai junto — com preço de quem compra em volume e atendimento de quem entende de obra.</p>
+        <div class="ctas">
+          <a class="btn btn-solid" href="#contato">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.19-1.16-1.55-1.16-2.96 0-1.4.73-2.09 1-2.38.26-.29.57-.36.77-.36.19 0 .39.01.56.01.18 0 .43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.01 2.1 1.32 2.39 1.47.29.15.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.75-.17 1.43z"/></svg>
+            Pedir orçamento
+          </a>
+          <a class="btn btn-ghost" href="#produtos">Ver o que temos</a>
+        </div>
+        <p class="note">Seg a sex, 8h às 18h · Sáb, 8h às 13h</p>
+      </div>
+
+      <div class="chips">
+        <div class="chip" style="background:var(--red)"><span>Linha</span><strong>Acrílica</strong></div>
+        <div class="chip" style="background:var(--blue)"><span>Linha</span><strong>Esmalte</strong></div>
+        <div class="chip" style="background:var(--green)"><span>Linha</span><strong>Textura</strong></div>
+        <div class="chip" style="background:var(--navy)"><span>Linha</span><strong>Ferramentas</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="produtos">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">01</span><h2>O que você encontra</h2></div>
+      <div class="row"><span class="n">01</span><div><h3>Tintas acrílicas</h3><p>Premium e econômica, fosca e acetinada, para parede interna e externa — branco e máquina de cores.</p></div><span class="tag">a partir de 3,6 L</span></div>
+      <div class="row"><span class="n">02</span><div><h3>Esmaltes e vernizes</h3><p>Base solvente e base d'água para madeira e metal, brilho e fosco, com catalisador e thinner.</p></div><span class="tag">pronta entrega</span></div>
+      <div class="row"><span class="n">03</span><div><h3>Texturas e massas</h3><p>Textura projetada, massa corrida e massa acrílica, fundo preparador e selador.</p></div><span class="tag">obra completa</span></div>
+      <div class="row"><span class="n">04</span><div><h3>Ferramentas e acessórios</h3><p>Rolo, pincel, bandeja, lixa, fita crepe, lona, escada e EPI — para levar tudo de uma vez.</p></div><span class="tag">atacado e varejo</span></div>
+      <div class="row" style="border-bottom:0"><span class="n">05</span><div><h3>Máquina de cores</h3><p>Leve a cor que você quer: a gente prepara na hora, na quantidade que a sua obra pede.</p></div><span class="tag">na loja</span></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">02</span><h2>A loja</h2></div>
+      <div class="loja" style="margin-top:34px">
+        <div>
+          <div class="block">
+            <h4>Endereço</h4>
+            <address>Av. Exemplo, 1840 — Loja 2<br>Bairro Exemplo · Belo Horizonte / MG<br>CEP 30000-000</address>
+          </div>
+          <div class="block">
+            <h4>Horário de funcionamento</h4>
+            <table class="hours">
+              <tr><td>Segunda a quinta</td><td>08:00 – 18:00</td></tr>
+              <tr class="now"><td>Sexta-feira</td><td>08:00 – 18:00</td></tr>
+              <tr><td>Sábado</td><td>08:00 – 13:00</td></tr>
+              <tr><td>Domingo e feriados</td><td>Fechado</td></tr>
+            </table>
+          </div>
+          <div class="block" style="margin-bottom:0">
+            <h4>Contato</h4>
+            <address>WhatsApp (31) 90000-0000<br>contato@atacadaodastintas.com.br</address>
+          </div>
+        </div>
+        <div class="ph" style="aspect-ratio:4/5">foto da fachada · 4:5</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta" id="contato">
+    <div class="wrap inner">
+      <div>
+        <h2 style="color:#fff">Manda a metragem que a gente calcula a tinta.</h2>
+        <p>Orçamento na hora pelo WhatsApp, com a quantidade certa para não sobrar nem faltar.</p>
+      </div>
+      <a class="btn btn-paper" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.19-1.16-1.55-1.16-2.96 0-1.4.73-2.09 1-2.38.26-.29.57-.36.77-.36.19 0 .39.01.56.01.18 0 .43-.07.67.51.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.77 1.27 1.66 2.06 1.14 1.01 2.1 1.32 2.39 1.47.29.15.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.39-.24.65-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.75-.17 1.43z"/></svg>
+        WhatsApp da loja
+      </a>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <img src="../assets/logo/LOGO_AF_HORIZONTAL.png" alt="Atacadão das Tintas">
+      <span class="mono">CNPJ 00.000.000/0001-00</span>
+      <span class="mono">@atacadaodast</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ==================== DIREÇÃO B ==================== -->
+<div class="b" id="dir-b" hidden>
+
+  <header class="bar">
+    <div class="wrap bar-in">
+      <div class="tile"><img src="../assets/logo/LOGO_AF_HORIZONTAL.png" alt="Atacadão das Tintas"></div>
+      <nav class="bar-right">
+        <a href="#linhas">Linhas</a>
+        <a href="#loja">Onde estamos</a>
+        <a class="btn btn-red" href="#contato">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1>Todas as cores.<br><span>Um só lugar.</span></h1>
+      <p class="sub">Atacado de tintas, texturas, esmaltes e ferramentas. Preço de volume, atendimento de balcão, entrega na obra.</p>
+      <div class="act">
+        <a class="btn btn-red" href="#contato">Pedir orçamento no WhatsApp</a>
+        <a class="btn btn-ghost" style="color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)" href="#loja">Onde estamos</a>
+      </div>
+    </div>
+    <div class="deck">
+      <div>Acrílica</div><div>Esmalte</div><div>Textura</div><div>Verniz</div><div>Ferramentas</div><div>Cor</div>
+    </div>
+  </div>
+
+  <section id="linhas">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" style="margin-bottom:10px">01 — Linhas</p>
+          <h2>Do fundo ao acabamento</h2>
+        </div>
+        <p style="max-width:32ch;color:var(--muted);font-size:15px">Tudo para a obra inteira, numa compra só.</p>
+      </div>
+      <div class="grid3">
+        <div class="cell">
+          <div class="dot" style="background:var(--red)"></div>
+          <div><h3>Tintas acrílicas</h3><p>Interna e externa, fosca e acetinada, branco e máquina de cores.</p></div>
+          <span class="k">3,6 L · 18 L</span>
+        </div>
+        <div class="cell">
+          <div class="dot" style="background:var(--blue)"></div>
+          <div><h3>Esmaltes e vernizes</h3><p>Madeira e metal, base solvente e base d'água, brilho e fosco.</p></div>
+          <span class="k">pronta entrega</span>
+        </div>
+        <div class="cell">
+          <div class="dot" style="background:var(--green)"></div>
+          <div><h3>Texturas e massas</h3><p>Textura projetada, massa corrida, acrílica, selador e fundo.</p></div>
+          <span class="k">obra completa</span>
+        </div>
+        <div class="cell">
+          <div class="dot" style="background:var(--purple)"></div>
+          <div><h3>Ferramentas</h3><p>Rolo, pincel, bandeja, lixa, fita, lona, escada e EPI.</p></div>
+          <span class="k">atacado e varejo</span>
+        </div>
+        <div class="cell">
+          <div class="dot" style="background:var(--orange)"></div>
+          <div><h3>Máquina de cores</h3><p>A cor que você quer, preparada na hora, na quantidade da sua obra.</p></div>
+          <span class="k">na loja</span>
+        </div>
+        <div class="cell">
+          <div class="dot" style="background:var(--yellow)"></div>
+          <div><h3>Entrega</h3><p>Compra grande? A gente combina a entrega direto no canteiro.</p></div>
+          <span class="k">consulte a região</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-band" id="loja">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" style="color:rgba(255,255,255,.5);margin-bottom:10px">02 — Onde e quando</p>
+          <h2>A loja</h2>
+        </div>
+        <a class="btn btn-red" href="#">Traçar rota</a>
+      </div>
+      <div class="info">
+        <div>
+          <h4>Endereço</h4>
+          <address>Av. Exemplo, 1840 — Loja 2<br>Bairro Exemplo<br>Belo Horizonte / MG · 30000-000</address>
+          <div class="big">(31) 90000-0000</div>
+          <div class="map">mapa · embed do Google</div>
+        </div>
+        <div>
+          <h4>Horário</h4>
+          <div class="hh">
+            <span class="d">Seg — Qui</span><span class="h">08:00 – 18:00</span>
+            <span class="d now">Sexta</span><span class="h now">08:00 – 18:00</span>
+            <span class="d">Sábado</span><span class="h">08:00 – 13:00</span>
+            <span class="d">Domingo</span><span class="h">Fechado</span>
+          </div>
+          <p style="margin-top:26px;color:rgba(255,255,255,.6);font-size:14px">Feriados: consulte no WhatsApp antes de vir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap">
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">03 — Contato</p>
+        <h2 style="font-size:clamp(30px,4.4vw,58px);color:var(--navy);text-transform:uppercase;max-width:16ch">Manda a metragem. A gente calcula.</h2>
+      </div>
+      <a class="btn btn-red" href="#" style="padding:18px 26px;font-size:16px">Falar no WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <div class="tile"><img src="../assets/logo/LOGO_AF_HORIZONTAL.png" alt="Atacadão das Tintas"></div>
+      <span class="mono">CNPJ 00.000.000/0001-00</span>
+      <span class="mono">@atacadaodast · Instagram</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function show(d){
+    document.getElementById('dir-a').hidden = d !== 'a';
+    document.getElementById('dir-b').hidden = d !== 'b';
+    document.getElementById('btn-a').setAttribute('aria-pressed', d === 'a');
+    document.getElementById('btn-b').setAttribute('aria-pressed', d === 'b');
+    window.scrollTo(0,0);
+  }
+  (function(){
+    var d = new URLSearchParams(location.search).get('d');
+    if (d === 'a' || d === 'b') show(d);
+  })();
+</script>
+</body>
+</html>

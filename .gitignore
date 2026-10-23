@@ -1,0 +1,5 @@
+# scratch de execução de planos (superpowers)
+.superpowers/
+node_modules/
+.DS_Store
+*.log
