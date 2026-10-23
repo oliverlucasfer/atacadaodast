@@ -137,18 +137,25 @@ section[id], main[id] { scroll-margin-top: var(--step-7); }
   text-decoration: none;
 }
 .marca-link img { width: 32px; height: 32px; }
+.marca-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
 .marca-nome {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 17px;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--color-heading);
 }
 .marca-sub {
-  padding-bottom: 2px;
+  margin-top: 3px;
   font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 0.2em;
+  font-size: 9px;
+  letter-spacing: 0.18em;
   color: var(--color-accent-text);
 }
 
@@ -514,4 +521,18 @@ address {
 
   .cta { padding: 56px 0; }
   .foot { padding: 28px 0 36px; }
+}
+
+/* ---------- tablet (iPad em pé e deitado) ---------- */
+
+@media (min-width: 901px) and (max-width: 1120px) {
+  .hero { padding: 56px 0 0; }
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  .hero-side { max-width: 52ch; }
+  h1 { max-width: 15ch; font-size: clamp(48px, 7.4vw, 76px); }
+
+  .secao { padding: 68px 0; }
+  .secao-loja { padding-top: 0; }
+  .loja { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .linha-produto { grid-template-columns: 44px 1fr; }
 }

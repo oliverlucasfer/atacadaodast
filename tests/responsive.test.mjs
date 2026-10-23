@@ -27,3 +27,12 @@ test("no mobile o cabecalho nao fica fixo", () => {
 test("alvos de toque com no minimo 44px", () => {
   assert.match(bloco, /min-height:\s*44px/);
 });
+
+test("existe um layout proprio para tablet (901px a 1120px)", () => {
+  const tablet = css.match(/@media \(min-width: 901px\) and \(max-width: 1120px\)/);
+  assert.ok(tablet, "sem breakpoint de tablet");
+  const inicioTablet = css.indexOf("@media (min-width: 901px) and (max-width: 1120px)");
+  const corpo = css.slice(inicioTablet);
+  assert.match(corpo, /\.hero-grid\s*\{[^}]*grid-template-columns:\s*1fr/);
+  assert.match(corpo, /\.hero-side\s*\{[^}]*max-width:\s*52ch/);
+});

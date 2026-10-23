@@ -72,3 +72,13 @@ test("o WhatsApp esta marcado como pendente e o status de horario existe", () =>
   assert.match(html, /data-pending="whatsapp"/);
   assert.match(html, /data-status-horario/);
 });
+
+test("nenhuma mencao a preco no texto da pagina", () => {
+  assert.ok(!/pre[çc]o/i.test(html), "sobrou mencao a preco");
+  assert.ok(!/R\$/.test(html), "sobrou valor em reais");
+});
+
+test("nome da marca fica em um bloco unico ao lado do simbolo", () => {
+  assert.match(html, /<span class="marca-texto">/);
+  assert.match(html, /<span class="marca-texto">\s*<span class="marca-nome">Atacadão<\/span>/);
+});
