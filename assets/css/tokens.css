@@ -14,6 +14,10 @@
   --color-accent-text: #C42B2F; /* vermelho para texto pequeno (AA) */
   --color-dark: #282954;        /* bloco de CTA */
   --color-line: rgba(51, 52, 104, 0.16);
+  --color-surface: #FFFFFF;     /* superfícies elevadas (botão sobre mapa) */
+  --color-map: #EFEDE6;         /* fundo do cartão de mapa */
+  --color-on-dark: #FFFFFF;     /* texto sobre o bloco escuro */
+  --color-on-dark-muted: rgba(255, 255, 255, 0.65);
 
   /* Leque de cores do símbolo */
   --spectrum-1: #ED3237;
