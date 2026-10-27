@@ -3,7 +3,7 @@
 Página única, estática, sem build e sem dependências de runtime. É o cartão de visita digital da
 loja: apresenta as linhas de produto, o endereço, o horário e leva ao WhatsApp.
 
-- **Produção (prevista):** `https://atacadaodast.pages.dev`
+- **Produção:** `https://atacadaodastintas.pages.dev`
 - **Spec:** `docs/superpowers/specs/2026-10-23-site-apresentacao-design.md`
 - **Plano de implementação:** `docs/superpowers/plans/2026-10-23-site-atacadaodast.md`
 
@@ -51,7 +51,7 @@ o portão de publicação.
 
 Cada push em `main` publica. HTTPS e CDN são automáticos.
 
-Se o nome do projeto no Cloudflare não for `atacadaodast`, troque os seis valores de URL absoluta no
+Se o nome do projeto no Cloudflare não for `atacadaodastintas`, troque os seis valores de URL absoluta no
 `<head>` (`canonical`, `og:url`, `og:image`, `twitter:image` e os campos `url`/`image` do JSON-LD).
 
 ## Checklist antes de publicar

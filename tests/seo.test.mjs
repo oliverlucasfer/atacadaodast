@@ -22,9 +22,22 @@ test("Open Graph completo com imagem absoluta", () => {
   assert.equal(meta("og:type"), "website");
   assert.ok(meta("og:title"));
   assert.ok(meta("og:description"));
-  assert.equal(meta("og:image"), "https://atacadaodast.pages.dev/assets/img/og-1200x630.png");
   assert.equal(meta("og:locale"), "pt_BR");
   assert.ok(meta("twitter:card"));
+});
+
+test("todas as URLs absolutas usam o dominio publicado", () => {
+  const SITE = "https://atacadaodastintas.pages.dev";
+  assert.equal(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1], `${SITE}/`);
+  assert.equal(meta("og:url"), `${SITE}/`);
+  assert.equal(meta("og:image"), `${SITE}/assets/img/og-1200x630.png`);
+  assert.equal(meta("twitter:image"), `${SITE}/assets/img/og-1200x630.png`);
+
+  const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(ld.url, `${SITE}/`);
+  assert.equal(ld.image, `${SITE}/assets/img/og-1200x630.png`);
+
+  assert.ok(!html.includes("atacadaodast.pages.dev"), "sobrou o endereco antigo no HTML");
 });
 
 test("JSON-LD LocalBusiness valido e com o telefone real", () => {

@@ -278,7 +278,7 @@ e `sameAs` (Instagram). `robots.txt` liberando indexação.
 ### 11.9 Publicação
 
 Repositório Git local + GitHub, conectado ao **Cloudflare Pages** (build command vazio, output `/`).
-Push em `main` publica. HTTPS e CDN automáticos, endereço `atacadaodast.pages.dev`. Domínio próprio
+Push em `main` publica. HTTPS e CDN automáticos, endereço `atacadaodastintas.pages.dev`. Domínio próprio
 depois é só apontar DNS — nenhuma mudança de código.
 
 ## 12. Dependências e pendências
