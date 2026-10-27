@@ -78,7 +78,9 @@ O script falha de propósito enquanto houver pendência. Estado em 27/10/2026:
       Texturas e massas · Bases e preparação · Materiais para pintura. **Não vende** ferramentas
       (escada, espátula, desempenadeira), EPI nem misturador; spray e thinner existem. Faz entrega em
       Vitória da Conquista **e região** (sem mencionar cobrança). Marcas não são citadas.
-- [ ] Revalidar o JSON-LD em <https://search.google.com/test/rich-results> com a URL publicada.
+- [x] **Rich Results validado** (27/10/2026) — 2 itens válidos: *Empresas locais* e *Organização*.
+      Zero erros. Único aviso é `priceRange` ausente (opcional) — omitido de propósito: o dono proíbe
+      menção a preço, e preencher seria inventar dado.
 
 ## Regenerar ativos
 
