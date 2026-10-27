@@ -27,7 +27,7 @@ test("Open Graph completo com imagem absoluta", () => {
   assert.ok(meta("twitter:card"));
 });
 
-test("JSON-LD LocalBusiness valido e sem telefone inventado", () => {
+test("JSON-LD LocalBusiness valido e com o telefone real", () => {
   const bruto = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
   assert.ok(bruto, "sem JSON-LD");
   const ld = JSON.parse(bruto);
@@ -40,7 +40,7 @@ test("JSON-LD LocalBusiness valido e sem telefone inventado", () => {
   assert.equal(ld.address.addressRegion, "BA");
   assert.equal(ld.address.postalCode, "45000-010");
   assert.deepEqual(ld.sameAs, ["https://www.instagram.com/atacadaodast/"]);
-  assert.ok(!("telephone" in ld), "telephone nao pode existir enquanto o WhatsApp estiver pendente");
+  assert.equal(ld.telephone, "+55 77 98838-0528");
   assert.ok(!("geo" in ld), "geo sem coordenadas verificadas");
   assert.equal(ld.openingHoursSpecification.length, 3);
 });

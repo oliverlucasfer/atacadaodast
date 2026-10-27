@@ -34,7 +34,7 @@ o portão de publicação.
 | Endereço, CEP | `index.html` → seção "A loja" + JSON-LD no `<head>` |
 | Tabela de horário | `index.html` → `<table class="horarios">` **e** `assets/js/hours.js` (constantes `ABRE`, `MEIO`, `TARDE`, `FECHA`) |
 | Textos das linhas de produto | `index.html` → `<article class="linha-produto">` |
-| Link do WhatsApp | `index.html` → os **três** elementos com `data-pending="whatsapp"` (cabeçalho, hero e CTA final) |
+| Link do WhatsApp | `index.html` → os **três** elementos com `href="https://wa.me/5577988380528"` (cabeçalho, hero e CTA final) **e** o `telephone` do JSON-LD |
 | Cores e fontes | `assets/css/tokens.css` (único lugar com valores de cor) |
 | Layout | `assets/css/styles.css` |
 
@@ -60,10 +60,10 @@ Se o nome do projeto no Cloudflare não for `atacadaodast`, troque os seis valor
 node scripts/check-golive.mjs
 ```
 
-O script falha de propósito enquanto houver pendência. Hoje falta:
+O script falha de propósito enquanto houver pendência. Estado em 27/10/2026:
 
-- [ ] **Número de WhatsApp** — substituir `data-pending="whatsapp"` e o `href="#"` por
-      `href="https://wa.me/55DDDNUMERO"`, e acrescentar `telephone` ao JSON-LD.
+- [x] **Número de WhatsApp** — `+55 77 98838-0528` nos três CTAs (`https://wa.me/5577988380528`)
+      e no `telephone` do JSON-LD.
 - [ ] Conferir as linhas de produto com o dono (as cinco atuais são proposta).
 - [ ] Revalidar o JSON-LD em <https://search.google.com/test/rich-results> depois do deploy.
 

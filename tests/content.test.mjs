@@ -68,8 +68,11 @@ test("estrutura: skip link, main e ancoras", () => {
   }
 });
 
-test("o WhatsApp esta marcado como pendente e o status de horario existe", () => {
-  assert.match(html, /data-pending="whatsapp"/);
+test("os tres CTAs abrem o WhatsApp real e o status de horario existe", () => {
+  assert.ok(!html.includes('data-pending="whatsapp"'), "sobrou pendencia de WhatsApp");
+  const links = html.match(/href="https:\/\/wa\.me\/5577988380528"/g) ?? [];
+  assert.equal(links.length, 3, "esperava cabecalho, hero e CTA final no numero real");
+  assert.ok(!/href="#(contato)?"[^>]*>[^<]*(WhatsApp|or[çc]amento)/i.test(html), "CTA de WhatsApp ainda rola para dentro da pagina");
   assert.match(html, /data-status-horario/);
 });
 
