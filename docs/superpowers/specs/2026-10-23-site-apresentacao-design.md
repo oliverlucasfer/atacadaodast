@@ -140,8 +140,12 @@ Ordem fixa, uma página, âncoras `#produtos`, `#loja`, `#contato`.
 
 ### 9.1 Conteúdo textual
 
-Tom direto, sem superlativo de propaganda. Exemplos aprovados no mockup: "Tinta boa, preço de atacado.";
-"Manda a metragem que a gente calcula a tinta."
+Tom direto, sem superlativo de propaganda. Exemplos aprovados: "A cor que a sua obra pede.";
+"Dúvida de quantidade ou de produto? A gente responde pelo WhatsApp."
+
+**Regra do dono:** nenhuma menção a preço, valor, desconto ou condição comercial no texto do site.
+"Atacado" permanece porque é o nome e o modelo de venda, não uma promessa de preço. Há teste cobrindo
+isso (`tests/content.test.mjs`).
 
 ## 10. Dark mode (fase 2)
 
