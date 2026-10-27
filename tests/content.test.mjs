@@ -82,6 +82,41 @@ test("os tres CTAs abrem o WhatsApp real e o status de horario existe", () => {
   assert.match(html, /data-status-horario/);
 });
 
+test("as cinco linhas sao as confirmadas pelo dono", () => {
+  const titulos = [...html.matchAll(/<article class="linha-produto">[\s\S]*?<h3>([^<]+)<\/h3>/g)].map((m) => m[1]);
+  assert.deepEqual(titulos, [
+    "Tintas",
+    "Máquina de cores",
+    "Texturas e massas",
+    "Bases e preparação",
+    "Materiais para pintura",
+  ]);
+});
+
+test("nenhuma linha promete o que a loja nao vende", () => {
+  // Confirmado pelo dono: nao vende ferramentas (escada, espadula, desempenadeira),
+  // EPI nem misturador. Spray e thinner continuam.
+  const texto = html.toLowerCase();
+  for (const item of ["ferramentas", "epi", "misturador", "escada", "espátula", "desempenadeira"]) {
+    assert.ok(!texto.includes(item), `sobrou promessa de: ${item}`);
+  }
+  for (const item of ["spray", "thinner"]) {
+    assert.ok(texto.includes(item), `faltou: ${item}`);
+  }
+});
+
+test("maquina de cores e entrega aparecem, sem condicao comercial", () => {
+  assert.match(html, /Máquina de cores/);
+  assert.match(html, /Entrega em Vitória da Conquista e região/);
+  assert.ok(!/gr[áa]tis|frete|cobra|R\$/i.test(html), "entrega nao pode virar promessa de preco ou frete");
+});
+
+test("o hero se apresenta como loja de tintas", () => {
+  const eyebrow = html.match(/<p class="eyebrow">([^<]+)<\/p>/)?.[1] ?? "";
+  assert.match(eyebrow, /Loja de tintas/);
+  assert.ok(!/atacado/i.test(eyebrow), "o dono pediu para tirar 'atacado' do hero");
+});
+
 test("nenhuma mencao a preco no texto da pagina", () => {
   assert.ok(!/pre[çc]o/i.test(html), "sobrou mencao a preco");
   assert.ok(!/R\$/.test(html), "sobrou valor em reais");

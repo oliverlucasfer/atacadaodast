@@ -285,9 +285,9 @@ depois é só apontar DNS — nenhuma mudança de código.
 
 | Item | Bloqueia | Observação |
 |---|---|---|
-| WhatsApp (DDD + número) | CTA principal | **pendente** — bloqueia o go-live |
+| WhatsApp (DDD + número) | CTA principal | **confirmado** — +55 77 98838-0528 |
 | Coordenadas da loja | mapa estático | necessárias para gerar `mapa.webp`; até lá, SVG esquemático |
-| Linhas de produto | conteúdo | dono vai detalhar; "máquina de cores" é suposição a confirmar |
+| Linhas de produto | conteúdo | **confirmado** — tintas, máquina de cores, texturas e massas, bases e preparação, materiais para pintura (sem ferramentas) |
 | E-mail | rodapé | opcional, não informado |
 | **Símbolo isolado da logo (PNG transparente)** | qualidade de favicon/OG | será recortado de `LOGO_AF.png` e simplificado para o favicon; um vetor do dono melhora o resultado |
 | Fotos internas (equipe, estoque, obras) | qualidade visual, fase 2 | a fachada está em obra; o mapa ocupa esse lugar |

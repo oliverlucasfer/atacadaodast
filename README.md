@@ -74,7 +74,10 @@ O script falha de propósito enquanto houver pendência. Estado em 27/10/2026:
       LCP 1,3 s e CLS 0 em 4G simulado.
 - [x] **Fontes** — só Archivo 800 e Plex Sans/Mono 400. O 600 da spec §8.2 foi descartado: só a linha
       do dia atual o usava, abaixo da dobra, e custava 45,7 KB (página 73 KB em vez de 118 KB).
-- [ ] Conferir as linhas de produto com o dono (as cinco atuais são proposta).
+- [x] **Linhas de produto conferidas com o dono** (27/10/2026): Tintas · Máquina de cores ·
+      Texturas e massas · Bases e preparação · Materiais para pintura. **Não vende** ferramentas
+      (escada, espátula, desempenadeira), EPI nem misturador; spray e thinner existem. Faz entrega em
+      Vitória da Conquista **e região** (sem mencionar cobrança). Marcas não são citadas.
 - [ ] Revalidar o JSON-LD em <https://search.google.com/test/rich-results> com a URL publicada.
 
 ## Regenerar ativos
