@@ -1,5 +1,7 @@
 # Netlify: pastas internas nao devem ser servidas como paginas.
-/mockups/*  /  302
-/docs/*     /  302
-/tests/*    /  302
-/scripts/*  /  302
+# O "!" forca o redirecionamento mesmo quando existe um arquivo no caminho
+# (sem ele o Netlify serve o arquivo com 200 em vez de redirecionar).
+/mockups/*  /  302!
+/docs/*     /  302!
+/tests/*    /  302!
+/scripts/*  /  302!

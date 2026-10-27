@@ -65,3 +65,14 @@ test("robots.txt libera indexacao", () => {
   assert.match(txt, /User-agent:\s*\*/);
   assert.match(txt, /Allow:\s*\//);
 });
+
+test("_redirects forca o bloqueio das pastas internas", () => {
+  // Sem o "!" o Netlify serve o arquivo (200) em vez de redirecionar, porque
+  // arquivo existente tem precedencia sobre a regra.
+  const linhas = readFileSync("_redirects", "utf8").split("\n");
+  for (const pasta of ["mockups", "docs", "tests", "scripts"]) {
+    const regra = linhas.find((l) => l.trim().startsWith(`/${pasta}/*`));
+    assert.ok(regra, `sem regra para /${pasta}/`);
+    assert.match(regra.trim(), /302!$/, `regra de /${pasta}/ sem "!" — o Netlify serve o arquivo`);
+  }
+});
