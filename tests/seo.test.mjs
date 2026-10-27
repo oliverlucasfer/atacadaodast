@@ -59,6 +59,14 @@ test("JSON-LD LocalBusiness valido e com o telefone real", () => {
   assert.equal(ld.openingHoursSpecification.length, 3);
 });
 
+test("a tag de verificacao do Search Console esta no head", () => {
+  // Nao remover: o Google recheca a propriedade periodicamente.
+  assert.match(
+    html,
+    /<meta name="google-site-verification" content="SzkHpNEaigz8Da1lZLpRu8ZPuYipW_GLKUeQfuF9Fug"\s*\/?>/,
+  );
+});
+
 test("sitemap.xml lista a home e o robots aponta para ele", () => {
   assert.ok(existsSync("sitemap.xml"), "falta sitemap.xml");
   const xml = readFileSync("sitemap.xml", "utf8");
