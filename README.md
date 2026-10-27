@@ -3,7 +3,7 @@
 Página única, estática, sem build e sem dependências de runtime. É o cartão de visita digital da
 loja: apresenta as linhas de produto, o endereço, o horário e leva ao WhatsApp.
 
-- **Produção:** `https://atacadaodastintas.netlify.app`
+- **Produção:** `https://atacadaodastintas.netlify.app` (no ar desde 27/10/2026)
 - **Spec:** `docs/superpowers/specs/2026-10-23-site-apresentacao-design.md`
 - **Plano de implementação:** `docs/superpowers/plans/2026-10-23-site-atacadaodast.md`
 
@@ -66,9 +66,13 @@ node scripts/check-golive.mjs
 O script falha de propósito enquanto houver pendência. Estado em 27/10/2026:
 
 - [x] **Número de WhatsApp** — `+55 77 98838-0528` nos três CTAs (`https://wa.me/5577988380528`)
-      e no `telephone` do JSON-LD.
+      e no `telephone` do JSON-LD. O link resolve em `api.whatsapp.com/send/?phone=5577988380528`.
+- [x] **Deploy** — Netlify, publish na raiz (`netlify.toml`), deploy automático a cada push na `main`.
+      `_redirects` bloqueia `docs/`, `tests/`, `mockups/` e `scripts/` (o `!` depois do 302 é obrigatório:
+      sem ele o Netlify serve o arquivo).
+- [x] **Lighthouse mobile** — 99 / 100 / 100 / 100 (performance / acessibilidade / boas práticas / SEO).
 - [ ] Conferir as linhas de produto com o dono (as cinco atuais são proposta).
-- [ ] Revalidar o JSON-LD em <https://search.google.com/test/rich-results> depois do deploy.
+- [ ] Revalidar o JSON-LD em <https://search.google.com/test/rich-results> com a URL publicada.
 
 ## Regenerar ativos
 

@@ -1,5 +1,13 @@
 # Site de apresentação — Atacadão das Tintas · Plano de Implementação
 
+> **Status (27/10/2026): executado e publicado em <https://atacadaodastintas.netlify.app>.**
+> Tasks 1–9 completas; o histórico de commits é a prova de cada uma. Hospedagem final: **Netlify**
+> (a Cloudflare tirou o Pages do fluxo principal do painel e o Workers não permite escolher o
+> subdomínio inteiro). Lighthouse mobile: 99 / 100 / 100 / 100. O WhatsApp chegou em 27/10/2026
+> (`+55 77 98838-0528`), então o portão de go-live passou a sair com 0.
+> Pendências que só o dono resolve: confirmar as linhas de produto e revalidar o JSON-LD.
+> As caixas abaixo ficaram sem marcar de propósito — são o registro do plano como foi escrito.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Publicar uma página estática única que apresenta o Atacadão das Tintas (Vitória da Conquista/BA), informa endereço, horário e contato, e leva o visitante ao WhatsApp em um toque.
