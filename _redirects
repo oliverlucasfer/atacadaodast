@@ -1,4 +1,4 @@
-# Cloudflare Pages: pastas internas não devem ser servidas como páginas.
+# Netlify: pastas internas nao devem ser servidas como paginas.
 /mockups/*  /  302
 /docs/*     /  302
 /tests/*    /  302

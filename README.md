@@ -3,7 +3,7 @@
 Página única, estática, sem build e sem dependências de runtime. É o cartão de visita digital da
 loja: apresenta as linhas de produto, o endereço, o horário e leva ao WhatsApp.
 
-- **Produção:** `https://atacadaodastintas.pages.dev`
+- **Produção:** `https://atacadaodastintas.netlify.app`
 - **Spec:** `docs/superpowers/specs/2026-10-23-site-apresentacao-design.md`
 - **Plano de implementação:** `docs/superpowers/plans/2026-10-23-site-atacadaodast.md`
 
@@ -44,14 +44,17 @@ o portão de publicação.
 
 ## Publicar
 
-1. `git push` do branch para o GitHub.
-2. No Cloudflare Pages: **Create project → Connect to Git**, escolha o repositório.
-3. *Build command*: deixe **vazio**. *Build output directory*: `/`.
-4. Branch de produção: `main`.
+Hospedagem no **Netlify** (plano free). O `_redirects` na raiz já está no formato nativo do Netlify e
+mantém `mockups/`, `docs/`, `tests/` e `scripts/` fora do ar.
 
-Cada push em `main` publica. HTTPS e CDN são automáticos.
+1. Netlify: **Add new site → Import an existing project → GitHub** → repositório `oliverlucasfer/atacadaodast`.
+2. *Build command*: **vazio**. *Publish directory*: **`.`** (já declarado em `netlify.toml`).
+3. Branch de produção: `main`.
 
-Se o nome do projeto no Cloudflare não for `atacadaodastintas`, troque os seis valores de URL absoluta no
+Cada push em `main` publica. HTTPS e CDN são automáticos, e o endereço é
+`https://atacadaodastintas.netlify.app`.
+
+Se o nome do site no Netlify não for `atacadaodastintas`, troque os seis valores de URL absoluta no
 `<head>` (`canonical`, `og:url`, `og:image`, `twitter:image` e os campos `url`/`image` do JSON-LD).
 
 ## Checklist antes de publicar

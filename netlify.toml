@@ -1,0 +1,4 @@
+# Netlify — site estático, sem build.
+# Publica a raiz do repositório; `_redirects` e `robots.txt` já estão lá.
+[build]
+  publish = "."

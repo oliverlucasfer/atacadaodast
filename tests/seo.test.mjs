@@ -27,7 +27,7 @@ test("Open Graph completo com imagem absoluta", () => {
 });
 
 test("todas as URLs absolutas usam o dominio publicado", () => {
-  const SITE = "https://atacadaodastintas.pages.dev";
+  const SITE = "https://atacadaodastintas.netlify.app";
   assert.equal(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1], `${SITE}/`);
   assert.equal(meta("og:url"), `${SITE}/`);
   assert.equal(meta("og:image"), `${SITE}/assets/img/og-1200x630.png`);
@@ -37,7 +37,8 @@ test("todas as URLs absolutas usam o dominio publicado", () => {
   assert.equal(ld.url, `${SITE}/`);
   assert.equal(ld.image, `${SITE}/assets/img/og-1200x630.png`);
 
-  assert.ok(!html.includes("atacadaodast.pages.dev"), "sobrou o endereco antigo no HTML");
+  assert.ok(!html.includes("atacadaodastintas.pages.dev"), "sobrou o endereco antigo no HTML");
+  assert.ok(!html.includes("workers.dev"), "sobrou endereco de workers no HTML");
 });
 
 test("JSON-LD LocalBusiness valido e com o telefone real", () => {
