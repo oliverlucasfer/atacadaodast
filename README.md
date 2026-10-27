@@ -70,7 +70,10 @@ O script falha de propósito enquanto houver pendência. Estado em 27/10/2026:
 - [x] **Deploy** — Netlify, publish na raiz (`netlify.toml`), deploy automático a cada push na `main`.
       `_redirects` bloqueia `docs/`, `tests/`, `mockups/` e `scripts/` (o `!` depois do 302 é obrigatório:
       sem ele o Netlify serve o arquivo).
-- [x] **Lighthouse mobile** — 99 / 100 / 100 / 100 (performance / acessibilidade / boas práticas / SEO).
+- [x] **Lighthouse mobile** — 100 / 100 / 100 / 100 (performance / acessibilidade / boas práticas / SEO),
+      LCP 1,3 s e CLS 0 em 4G simulado.
+- [x] **Fontes** — só Archivo 800 e Plex Sans/Mono 400. O 600 da spec §8.2 foi descartado: só a linha
+      do dia atual o usava, abaixo da dobra, e custava 45,7 KB (página 73 KB em vez de 118 KB).
 - [ ] Conferir as linhas de produto com o dono (as cinco atuais são proposta).
 - [ ] Revalidar o JSON-LD em <https://search.google.com/test/rich-results> com a URL publicada.
 
