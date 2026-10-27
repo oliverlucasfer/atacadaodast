@@ -36,6 +36,7 @@ o portão de publicação.
 | Textos das linhas de produto | `index.html` → `<article class="linha-produto">` |
 | Link do WhatsApp | `index.html` → os **três** elementos com `href="https://wa.me/5577988380528"` (cabeçalho, hero e CTA final) **e** o `telephone` do JSON-LD |
 | Cores e fontes | `assets/css/tokens.css` (único lugar com valores de cor) |
+| Sitemap e indexação | `sitemap.xml` (uma URL só; atualize o `lastmod`) e `robots.txt` |
 | Layout | `assets/css/styles.css` |
 
 > **Atenção:** mudar o horário exige editar **os dois** lugares — a tabela visível e as constantes do

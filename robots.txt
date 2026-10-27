@@ -4,3 +4,5 @@ Disallow: /mockups/
 Disallow: /docs/
 Disallow: /tests/
 Disallow: /scripts/
+
+Sitemap: https://atacadaodastintas.netlify.app/sitemap.xml

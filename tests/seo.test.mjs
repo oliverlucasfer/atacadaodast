@@ -59,6 +59,19 @@ test("JSON-LD LocalBusiness valido e com o telefone real", () => {
   assert.equal(ld.openingHoursSpecification.length, 3);
 });
 
+test("sitemap.xml lista a home e o robots aponta para ele", () => {
+  assert.ok(existsSync("sitemap.xml"), "falta sitemap.xml");
+  const xml = readFileSync("sitemap.xml", "utf8");
+  assert.match(xml, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+  assert.match(xml, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  assert.deepEqual(locs, ["https://atacadaodastintas.netlify.app/"]);
+  assert.match(xml, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+
+  const robots = readFileSync("robots.txt", "utf8");
+  assert.match(robots, /^Sitemap: https:\/\/atacadaodastintas\.netlify\.app\/sitemap\.xml$/m);
+});
+
 test("robots.txt libera indexacao", () => {
   assert.ok(existsSync("robots.txt"));
   const txt = readFileSync("robots.txt", "utf8");
