@@ -29,3 +29,7 @@ test("skip link fica fora da tela ate receber foco", () => {
   assert.match(css, /\.skip\s*\{[^}]*position:\s*absolute/);
   assert.match(css, /\.skip:focus[^{]*\{[^}]*left:\s*1rem/);
 });
+
+test("dia atual da tabela tem marcacao textual, nao so cor", () => {
+  assert.match(css, /\.horarios tr\.hoje th::after\s*\{[^}]*content:\s*"[^"]*hoje/i);
+});

@@ -104,10 +104,10 @@ test("JSON-LD traz o bairro junto do logradouro", () => {
 // --- 11. coerencia de horario entre HTML, JSON-LD e JS ---
 test("horario coerente entre tabela, JSON-LD e hours.js", () => {
   const js = readFileSync("assets/js/hours.js", "utf8");
-  assert.match(js, /ABRE = 480/);
-  assert.match(js, /MEIO = 720/);
-  assert.match(js, /TARDE = 840/);
-  assert.match(js, /FECHA = 1080/);
+  assert.match(js, /ABRE\s*=\s*480/);
+  assert.match(js, /MEIO\s*=\s*720/);
+  assert.match(js, /TARDE\s*=\s*840/);
+  assert.match(js, /FECHA\s*=\s*1080/);
 
   const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
   const janelas = ld.openingHoursSpecification.map((h) => `${h.opens}-${h.closes}`);

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { statSync } from "node:fs";
+import { readFileSync, statSync } from "node:fs";
 import { statusFor, marcarDiaAtual } from "../assets/js/hours.js";
 
 const em = (iso) => new Date(iso);
@@ -56,4 +56,11 @@ test("marcarDiaAtual usa ISO (domingo = 7)", () => {
 
 test("o modulo cabe no orcamento de 1,5 KB", () => {
   assert.ok(statSync("assets/js/hours.js").size <= 1536);
+});
+
+test("a linha do dia atual e marcada para tecnologia assistiva", () => {
+  // O destaque visual depende do CSS; aqui garantimos que o dia de hoje tambem
+  // chega ao leitor de tela como dado, nao como informacao so visual (§11.7).
+  const js = readFileSync("assets/js/hours.js", "utf8");
+  assert.match(js, /setAttribute\("aria-current",\s*"date"\)/);
 });

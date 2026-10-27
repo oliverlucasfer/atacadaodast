@@ -42,7 +42,13 @@ test("link de rota aponta para o endereco completo", () => {
 });
 
 test("nenhum telefone inventado na pagina", () => {
-  assert.ok(!/9000-0000|90000-0000|href="tel:/.test(html));
+  assert.ok(!/9000-0000|90000-0000/.test(html));
+});
+
+test("telefone real clicavel no cabecalho e no bloco de contato", () => {
+  const tels = [...html.matchAll(/href="(tel:[^"]+)"/g)].map((m) => m[1]);
+  assert.ok(tels.length >= 2, `esperava o telefone em dois lugares, achei ${tels.length}`);
+  for (const t of tels) assert.equal(t, "tel:+5577988380528", `telefone inesperado: ${t}`);
 });
 
 test("toda imagem tem alt, width e height", () => {

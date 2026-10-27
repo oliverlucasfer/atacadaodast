@@ -1,5 +1,5 @@
 const TZ = "America/Sao_Paulo";
-const ABRE = 480, MEIO = 720, TARDE = 840, FECHA = 1080;
+const ABRE=480, MEIO=720, TARDE=840, FECHA=1080;
 const DIA = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 const fmt = new Intl.DateTimeFormat("en-US", {
   timeZone: TZ, weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
@@ -24,10 +24,12 @@ export function statusFor(date = new Date()) {
 export const marcarDiaAtual = (date = new Date()) => ((agora(date).dia + 6) % 7) + 1;
 
 if (typeof document !== "undefined") {
-  const alvo = document.querySelector("[data-status-horario]");
-  if (alvo) alvo.textContent = statusFor();
-  const hoje = marcarDiaAtual() % 7;
+  const a = document.querySelector("[data-status-horario]");
+  if (a) a.textContent = statusFor();
+  const hoje = String(marcarDiaAtual() % 7);
   for (const tr of document.querySelectorAll("[data-dias]")) {
-    tr.classList.toggle("hoje", tr.dataset.dias.split(",").map(Number).includes(hoje));
+    const h = tr.dataset.dias.split(",").includes(hoje);
+    tr.classList.toggle("hoje", h);
+    if (h) tr.setAttribute("aria-current", "date");
   }
 }

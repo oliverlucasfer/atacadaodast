@@ -170,6 +170,8 @@ section[id], main[id] { scroll-margin-top: var(--step-7); }
   text-decoration: none;
 }
 .bar-nav a:not(.btn):hover { color: var(--color-heading); }
+/* telefone: mono para os dígitos alinharem com a tabela de horários */
+.bar-tel { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
 /* ---------- hero ---------- */
 
@@ -373,6 +375,16 @@ address {
 .horarios tr.hoje td {
   color: var(--color-accent-text);
   font-weight: 600;
+}
+/* "hoje" em texto: o destaque nao pode depender so da cor (§11.7) */
+.horarios tr.hoje th::after {
+  content: " · hoje";
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .status {

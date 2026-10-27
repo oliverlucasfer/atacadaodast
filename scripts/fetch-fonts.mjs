@@ -11,6 +11,7 @@ const UA =
 const ALVOS = [
   { familia: "Archivo", peso: "800", arquivo: "archivo-800.woff2" },
   { familia: "IBM Plex Sans", peso: "400", arquivo: "plex-sans-400.woff2" },
+  { familia: "IBM Plex Sans", peso: "600", arquivo: "plex-sans-600.woff2" },
   { familia: "IBM Plex Mono", peso: "400", arquivo: "plex-mono-400.woff2" },
 ];
 
