@@ -67,6 +67,11 @@ test("a tag de verificacao do Search Console esta no head", () => {
   );
 });
 
+test("a tag de verificacao do Bing esta no head", () => {
+  // Nao remover: o Bing recheca a propriedade periodicamente.
+  assert.match(html, /<meta name="msvalidate\.01" content="31C689AA9D3E0335439464A3CF7A7111"\s*\/?>/);
+});
+
 test("sitemap.xml lista a home e o robots aponta para ele", () => {
   assert.ok(existsSync("sitemap.xml"), "falta sitemap.xml");
   const xml = readFileSync("sitemap.xml", "utf8");
